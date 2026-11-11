@@ -1,0 +1,11 @@
+steps:
+  - label: ":bazel: build"
+    key: "build"
+    agents: { queue: "default" }
+    command: "bazel build //..."
+
+  - label: ":bazel: test"
+    key: "test"
+    depends_on: "build"
+    agents: { queue: "default" }
+    command: "bazel test //... --test_output=errors"
