@@ -10,4 +10,6 @@ py_test(
     name = "greeting_test",
     srcs = ["greeting_test.py"],
     deps = [":greeting"],
+    data = glob(["testdata/**"]),
 )
+
