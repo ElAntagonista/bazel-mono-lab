@@ -1,4 +1,4 @@
 steps:
   - label: ":pipeline: generate"
     agents: { queue: "default" }
-    command: "python3 .buildkite/generate.py | buildkite-agent pipeline upload"
+    command: "bazel run //.buildkite/gen | buildkite-agent pipeline upload"

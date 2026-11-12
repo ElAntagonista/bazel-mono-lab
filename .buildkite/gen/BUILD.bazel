@@ -1,0 +1,9 @@
+load("@rules_go//go:def.bzl", "go_binary")
+
+# Pipeline generator: `bazel run //.buildkite/gen | buildkite-agent pipeline upload`
+go_binary(
+    name = "gen",
+    pure = "on",
+    srcs = ["main.go"],
+    deps = ["@com_github_buildkite_buildkite_sdk_sdk_go//sdk/buildkite"],
+)
