@@ -1,11 +1,4 @@
 steps:
-  - label: ":bazel: build"
-    key: "build"
+  - label: ":pipeline: generate"
     agents: { queue: "default" }
-    command: "bazel build //..."
-
-  - label: ":bazel: test"
-    key: "test"
-    depends_on: "build"
-    agents: { queue: "default" }
-    command: "bazel test //... --test_output=errors"
+    command: "python3 .buildkite/generate.py | buildkite-agent pipeline upload"
