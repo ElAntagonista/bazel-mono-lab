@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("internal cli tool: ok")
+	fmt.Println("internal cli tool: ok!")
 }
